@@ -1,6 +1,10 @@
 /* 
     General Styles
 */
+body {
+    background-color: #212529!important;
+}
+
 .logo {
     width: 100px;
     margin-left: 2em;
@@ -21,4 +25,30 @@
 
 .tx-info {
     color: #dc3b4c!important;
+}
+
+.detail-container {
+    border-top: 2px solid #dc3545; 
+    padding-top: 20px; 
+    height: 600px; 
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to right, rgba(255, 0, 0, 0.8), rgba(128, 0, 0, 0.8));
+    border-radius: 10px;
+    border: 2px solid rgba(254, 0, 0, 0.751);
+    box-shadow: 0 0 10px rgba(254, 0, 0, 0.751);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to right, rgba(254, 0, 0, 0.751), rgba(179, 0, 0, 0.8)); 
 }
