@@ -4,7 +4,7 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context);
-    console.log("fav: "+store.favorites)
+    console.log("fav: "+store.favorites.name)
     return (
         <nav className="navbar navbar-light bg-light mb-3">
             <Link to="/">

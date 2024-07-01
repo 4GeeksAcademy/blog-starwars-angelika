@@ -14,6 +14,11 @@ body {
     margin-right: 2em;
 }
 
+.btn-favorite:active {
+    background-color: #ffc107!important;
+    color: #000!important;
+}
+
 .row-info {
     border-top: 1px solid #dc3b4c!important;
     margin-top: 3em;

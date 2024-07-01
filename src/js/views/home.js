@@ -13,11 +13,7 @@ export const Home = () => {
         actions.fetchPlanets();
     }, []);
 
-    useEffect(() => {
-        console.log("People:", store.people);
-        console.log("Vehicles:", store.vehicles);
-        console.log("Planets:", store.planets);
-    }, [store.people, store.vehicles, store.planets]);
+
 
     return (
         <div className="container bg-dark">            
