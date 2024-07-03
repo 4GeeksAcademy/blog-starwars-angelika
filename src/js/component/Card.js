@@ -4,7 +4,6 @@ import { getImageUrl } from "./ImageMapping";
 
 export const Card = ({ item, type, addFavorite }) => {
     const navigate = useNavigate();
-    console.log(type);
     const imageUrl = getImageUrl(item.name);
 
     const extractNumberFromUrl = (url) => {
@@ -17,14 +16,7 @@ export const Card = ({ item, type, addFavorite }) => {
 
     const handleLearnMore = () => {
         const id = extractNumberFromUrl(item.url);
-        switch (type) {
-            case 'people':
-                navigate(`/detail-character/${id}`);
-            case 'vehicle':
-                navigate(`/detail-vehicle/${id}`);
-            case 'planet':
-                navigate(`/detail-planet/${id}`);
-        }
+        navigate(`/detail/${type}/${id}`);
     };
 
     const renderAttributes = () => {

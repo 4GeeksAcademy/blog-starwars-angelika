@@ -4,7 +4,6 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
     const { store, actions } = useContext(Context);
-    console.log("fav: "+JSON.stringify(store.favorites))
     return (
         <nav className="navbar navbar-light bg-light mb-3">
             <Link to="/">
@@ -13,19 +12,21 @@ export const Navbar = () => {
                 </span>
             </Link>
             <div className="ml-auto">
-                <div className="dropdown me-8">
+                <div className="dropdown me-5">
                     <button className="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Favorites <span className="badge badge-light">{store.favorites.length}</span>
                     </button>
-                    <ul className="dropdown-menu w-100">
-                        {store.favorites.map((item, index) => (
-                            <li key={index}>
-                                {item.name}
-                                <button className="btn btn-outline-danger btn-sm" onClick={() => actions.addFavorite(item)}>
-                                    <i className="fa fa-trash"></i>
-                                </button>
-                            </li>
-                        ))}
+                    <ul className="dropdown-menu w-100 p-2">
+                        {store.favorites.length === 0 ? (
+                            <li className="text-center">(empty)</li>
+                        ) : (
+                            store.favorites.map((item, index) => (
+                                <li key={index} className="d-flex justify-content-between align-items-center border-bottom">
+                                    {item.name}
+                                    <i className="fa-solid fa-xmark text-danger" onClick={() => actions.addFavorite(item)}></i>
+                                </li>
+                            ))
+                        )}
                     </ul>
                 </div>
             </div>

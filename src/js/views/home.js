@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { Context } from "../store/appContext";
 import { Card } from "../component/Card";
+import { Footer } from "../component/footer";
 
 export const Home = () => {
     const { store, actions } = useContext(Context);
-    console.log(store)
     useEffect(() => {
         actions.fetchCharacters();
         actions.fetchVehicles();
@@ -15,7 +15,7 @@ export const Home = () => {
 
     return (
         <div className="container bg-dark">            
-            <h2 className="text-warning">Characters</h2>
+            <h2 className="text-warning mt-3">Characters</h2>
             <div className="row flex-nowrap overflow-auto p-3">
                 {store.people.length > 0 ? store.people.map((character, index) => (
                     <div className="col-3 m-3" key={index}>
@@ -24,7 +24,7 @@ export const Home = () => {
                 )) : <p>No characters found.</p>}
             </div>
 
-            <h2 className="text-warning">Vehicles</h2>
+            <h2 className="text-warning mt-5">Vehicles</h2>
             <div className="row flex-nowrap overflow-auto p-3">
                 {store.vehicles.length > 0 ? store.vehicles.map((vehicle, index) => (
                     <div className="col-3 m-3" key={index}>
@@ -32,7 +32,7 @@ export const Home = () => {
                     </div>
                 )) : <p>No vehicles found.</p>}
             </div>
-            <h2 className="text-warning">Planets</h2>
+            <h2 className="text-warning mt-5">Planets</h2>
             <div className="row flex-nowrap overflow-auto p-3">
                 {store.planets.length > 0 ? store.planets.map((planet, index) => (
                     <div className="col-3 m-3" key={index}>
@@ -41,5 +41,6 @@ export const Home = () => {
                 )) : <p>No planets found.</p>}
             </div>
         </div>
+
     );
 };
