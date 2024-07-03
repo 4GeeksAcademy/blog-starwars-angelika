@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getImageUrl } from "../component/ImageMapping";
+import { getDescription } from "../component/DescriptionMapping";
 
 export const DetailCharacter = () => {
     const { id } = useParams();
     const [item, setItem] = useState(null);
     const imageUrl = getImageUrl(item?.name);
+    const descriptionItem = getDescription(item?.name);
 
     useEffect(() => {
         const fetchDetail = async () => {
@@ -31,7 +33,7 @@ export const DetailCharacter = () => {
                 </div>
                 <div className="col-md-8">
                     <h3 className="text-white">{item.name}</h3>
-                    <p className="text-white">{item.description || "No description available."}</p>
+                    <p className="text-white">{descriptionItem}</p>
                     <div className="row pt-3 detail-container">
                         <div className="col"><p className="text-danger text-center"> Height: {item.height}</p></div>
                         <div className="col"><p className="text-danger text-center"> Mass: {item.mass}</p></div>

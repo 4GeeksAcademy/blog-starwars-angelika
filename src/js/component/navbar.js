@@ -13,7 +13,7 @@ export const Navbar = () => {
                 </span>
             </Link>
             <div className="ml-auto">
-                <div className="dropdown me-5">
+                <div className="dropdown me-8">
                     <button className="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                         Favorites <span className="badge badge-light">{store.favorites.length}</span>
                     </button>
